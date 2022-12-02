@@ -38,14 +38,11 @@ def Abrir_chamado():
 
 def create():
     nome = '01'
-    imagem = navegador.save_screenshot('screenshot.png')
-    open_pasta = os.path.join('//desktop//projects//selenium_save_screenshots')
-    os.mkdir(open_pasta+nome)
-    lista = os.listdir(open_pasta)
+    navegador.execute_script("window.scrollTo(0,document.body.scrollHeight)")
+    imagem = navegador.save_screenshot('./imagens/screenshot.png')
+    lista = os.listdir('./imagens')
     print(lista)
     print('concluido')
-    
-    
 
 Validador_login()
 Abrir_chamado()
