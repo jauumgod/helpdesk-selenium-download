@@ -13,8 +13,9 @@ navegador = webdriver.Chrome(service=servico)
 
 time.sleep(1)
 def Validador_login():
-    usuario = 'joao.marinho'
-    senha = 'a1h2q4v1'
+    usuario = 'secret'
+    senha = 'secret-key'
+    
     global navegador
     navegador.get("https://helpdesk.grupokurujao.com.br/otrs/index.pl")
     time.sleep(2)
