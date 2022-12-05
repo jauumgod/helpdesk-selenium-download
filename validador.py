@@ -3,10 +3,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 import time
 import os
 
-
+os.system('cls')
 servico = Service(ChromeDriverManager().install())
 navegador = webdriver.Chrome(service=servico)
 
@@ -44,9 +45,15 @@ def create():
     print(lista)
     print('concluido')
 
+def web_scraping():
+    dados = navegador.find_element('xpath','/html/body/text()[2]').text()
+    print(dados)
+    
+
 Validador_login()
 Abrir_chamado()
 create()
+web_scraping()
 
 time.sleep(1)
 navegador.close()
